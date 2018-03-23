@@ -375,7 +375,7 @@ class BladeCompiler extends Compiler implements CompilerInterface
                 .'"[^"\\\\]*(?:\\\\.[^"\\\\]*)*"' // double quoted string,
                 .'|\'[^\'\\\\]*(?:\\\\.[^\'\\\\]*)*\'' // single quoted string,
                 .'|\[(?:(?1),?)*\]' // nested square arrays,
-                .'|(?:\w|->|::)+\s*\((?:(?1),?)*\)' // nested functions or arrays,
+                .'|\((?:(?1),?)*\)' // nested functions calls or arrays,
                 .'|[^,\'"\[\]\(\)]+' // something else but none of the above.
             .')+\s*)(?:$|(?>,\s*)(?!$))/i'; // Match end of string or argument separator.
 
